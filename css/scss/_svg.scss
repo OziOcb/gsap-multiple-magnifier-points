@@ -1,0 +1,17 @@
+.svgWrapper {
+  width: 80%;
+}
+
+.content {
+  opacity: 0;
+}
+
+.point {
+  cursor: pointer;
+  &:hover + .content {
+    opacity: 1;
+  }
+}
+
+.point {
+}
