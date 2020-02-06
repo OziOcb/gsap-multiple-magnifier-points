@@ -8,10 +8,13 @@
 
 .point {
   cursor: pointer;
-  &:hover + .content {
-    opacity: 1;
-  }
-}
+  // &:hover + .content {
+  //   opacity: 1;
+  // }
 
-.point {
+  &.active {
+    + .content {
+      opacity: 1;
+    }
+  }
 }
