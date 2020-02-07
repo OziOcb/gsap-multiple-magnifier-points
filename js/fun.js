@@ -1,25 +1,15 @@
 var points = document.querySelectorAll(".point");
+var tl = gsap.timeline(); //dummy placeholder animation
 
-points.forEach(function(point) {
-  point.addEventListener("click", onClick);
-});
-
-function onClick(e) {
+function toggleGsapAnimation(e) {
   var active = document.querySelector(".active");
-
   if (active && active.id === e.target.id) {
     console.log("already visible");
     return;
   }
-
-  var activePanelParent = active.parentNode;
-  var activePanel = {
-    point: activePanelParent.querySelector(".point"),
-    line: activePanelParent.querySelector(".line"),
-    image: activePanelParent.querySelector(".image"),
-    title: activePanelParent.querySelector(".title"),
-    desc: activePanelParent.querySelector(".description")
-  };
+  if (active) {
+    tl.timeScale(3).reverse();
+  }
 
   targetParent = e.target.parentNode;
   var panel = {
@@ -30,23 +20,21 @@ function onClick(e) {
     desc: targetParent.querySelector(".description")
   };
 
-  if (active) {
-    gsap
-      .timeline()
-      .to([activePanel.line, activePanel.image], 1, { opacity: 0 })
-      .to(activePanel.line, { attr: { "stroke-dashoffset": 300 } });
-  }
-
-  points.forEach(function(point) {
-    point.classList.remove("active");
-  });
-
-  gsap
+  tl = gsap
     .timeline()
     .to(panel.point, 0.3, { scale: 0.9, transformOrigin: "50% 50%" })
     .to(panel.point, 0.2, { scale: 1.2 })
     .to(panel.point, 0.2, { scale: 1 })
     .to(panel.line, 1, { attr: { "stroke-dashoffset": 0 }, opacity: 1 }, "-=.4")
     .to(panel.image, 2, { opacity: 1 }, "-=0.5");
+
+  points.forEach(function(p) {
+    p.classList.remove("active");
+  });
+
   e.target.classList.add("active");
 }
+
+points.forEach(function(point) {
+  point.addEventListener("click", toggleGsapAnimation);
+});
