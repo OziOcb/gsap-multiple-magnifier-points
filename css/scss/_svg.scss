@@ -2,7 +2,10 @@
   width: 80%;
 }
 
-.content {
+.line,
+.image,
+.title,
+.description {
   opacity: 0;
 }
 
@@ -12,25 +15,25 @@
   //   opacity: 1;
   // }
 
-  &.active {
-    + .content {
-      opacity: 1;
+  // &.active {
+  //   + .content {
+  //     opacity: 1;
 
-      .line {
-        stroke-dasharray: 10;
-        stroke-dashoffset: 1000;
-        animation: dash 30s linear infinite;
+  //     .line {
+  //       stroke-dasharray: 10;
+  //       stroke-dashoffset: 1000;
+  //       animation: dash 30s linear infinite;
 
-        &.reverse {
-          stroke-dashoffset: -1000;
-        }
-      }
-    }
-  }
+  //       &.reverse {
+  //         stroke-dashoffset: -1000;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
+// @keyframes dash {
+//   to {
+//     stroke-dashoffset: 0;
+//   }
+// }
