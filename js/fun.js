@@ -36,8 +36,12 @@ document.addEventListener("DOMContentLoaded", function() {
       )
       .reverse();
 
-    point.addEventListener("click", function(e) {
-      tl.reversed(!tl.reversed());
+    point.addEventListener("click", function() {
+      if (tl.reversed()) {
+        tl.play().timeScale(1);
+      } else {
+        tl.timeScale(4).reverse();
+      }
     });
   });
 });
