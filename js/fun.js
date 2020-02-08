@@ -15,6 +15,7 @@ function toggleGsapAnimation(e) {
   var panel = {
     point: targetParent.querySelector(".point"),
     line: targetParent.querySelector(".line"),
+    circle: targetParent.querySelector(".circle"),
     image: targetParent.querySelector(".image"),
     title: targetParent.querySelector(".title"),
     desc: targetParent.querySelector(".description")
@@ -26,7 +27,18 @@ function toggleGsapAnimation(e) {
     .to(panel.point, 0.2, { scale: 1.2 })
     .to(panel.point, 0.2, { scale: 1 })
     .to(panel.line, 1, { attr: { "stroke-dashoffset": 0 }, opacity: 1 }, "-=.4")
-    .to(panel.image, 2, { opacity: 1 }, "-=0.5");
+    .to(
+      panel.circle,
+      2,
+      {
+        attr: { "stroke-dashoffset": 0 },
+        opacity: 1,
+        ease: "power4"
+      },
+      "-=0.5"
+    )
+    .to(panel.image, 0.3, { opacity: 1, scale: 1.1, transformOrigin: "50% 50%" }, "-=1.5")
+    .to(panel.image, 0.3, { scale: 1.05 }, "-=1.3");
 
   points.forEach(function(p) {
     p.classList.remove("active");
