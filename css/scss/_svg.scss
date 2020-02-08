@@ -2,6 +2,10 @@
   width: 80%;
 }
 
+.point {
+  cursor: pointer;
+}
+
 .line,
 .circle,
 .image,
@@ -10,31 +14,8 @@
   opacity: 0;
 }
 
-.point {
-  cursor: pointer;
-  // &:hover + .content {
-  //   opacity: 1;
-  // }
-
-  // &.active {
-  //   + .content {
-  //     opacity: 1;
-
-  //     .line {
-  //       stroke-dasharray: 10;
-  //       stroke-dashoffset: 1000;
-  //       animation: dash 30s linear infinite;
-
-  //       &.reverse {
-  //         stroke-dashoffset: -1000;
-  //       }
-  //     }
-  //   }
-  // }
+.description {
+  font-size: 18px;
+  fill: #fff;
+  font-family: Montserrat-Regular, Montserrat;
 }
-
-// @keyframes dash {
-//   to {
-//     stroke-dashoffset: 0;
-//   }
-// }

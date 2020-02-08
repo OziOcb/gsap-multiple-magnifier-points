@@ -37,8 +37,10 @@ function toggleGsapAnimation(e) {
       },
       "-=0.5"
     )
-    .to(panel.image, 0.3, { opacity: 1, scale: 1.1, transformOrigin: "50% 50%" }, "-=1.5")
-    .to(panel.image, 0.3, { scale: 1.05 }, "-=1.3");
+    .fromTo(panel.title, 0.3, { y: "+=10" }, { y: "-=10", opacity: 1 }, "-=1.7")
+    .fromTo(panel.desc, 0.3, { y: "+=10" }, { y: "-=10", opacity: 1 }, "-=1.5")
+    .to(panel.image, 0.3, { opacity: 1, scale: 1.1, transformOrigin: "50% 50%" }, "-=1.2")
+    .to(panel.image, 0.3, { scale: 1.05 }, "-=0.8");
 
   points.forEach(function(p) {
     p.classList.remove("active");
