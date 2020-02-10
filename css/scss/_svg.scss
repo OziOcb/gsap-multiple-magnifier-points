@@ -1,30 +1,27 @@
-.cls-10 {
-  font-size: 18px;
-  fill: #d5373a;
-  font-family: Montserrat-Bold, Montserrat;
-  font-weight: 700;
-}
-.cls-13,
-.cls-14 {
-  fill: transparent;
-  stroke: #fff;
-  stroke-miterlimit: 10;
-}
-.cls-13 {
-  stroke-width: 2px;
-}
-.cls-14 {
-  stroke-width: 3px;
-}
-
 .svgWrapper {
   width: 80%;
 }
 
 .point {
   cursor: pointer;
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-miterlimit: 10;
 }
 
+.title {
+  font-size: 18px;
+  fill: #d5373a;
+  font-family: Montserrat-Bold, Montserrat;
+  font-weight: 700;
+}
+.line {
+  fill: transparent;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+}
 .line,
 .circle,
 .image,
