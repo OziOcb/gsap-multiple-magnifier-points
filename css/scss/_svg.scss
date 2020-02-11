@@ -2,35 +2,36 @@
   width: 80%;
 }
 
-.content {
+.point {
+  cursor: pointer;
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-miterlimit: 10;
+}
+
+.title {
+  font-size: 18px;
+  fill: #d5373a;
+  font-family: Montserrat-Bold, Montserrat;
+  font-weight: 700;
+}
+.line {
+  fill: transparent;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+}
+.line,
+.circle,
+.image,
+.title,
+.description {
   opacity: 0;
 }
 
-.point {
-  cursor: pointer;
-  // &:hover + .content {
-  //   opacity: 1;
-  // }
-
-  &.active {
-    + .content {
-      opacity: 1;
-
-      .line {
-        stroke-dasharray: 10;
-        stroke-dashoffset: 1000;
-        animation: dash 30s linear infinite;
-
-        &.reverse {
-          stroke-dashoffset: -1000;
-        }
-      }
-    }
-  }
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
+.description {
+  font-size: 18px;
+  fill: #fff;
+  font-family: Montserrat-Regular, Montserrat;
 }
